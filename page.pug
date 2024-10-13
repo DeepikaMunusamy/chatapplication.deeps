@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        title= "Real Time Web Chat"
+        style.
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+            }
+            #content {
+                width: 500px;
+                height: 300px;
+                margin: 20px auto;
+                border: 2px solid #666;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: #fff;
+                overflow-y: scroll;
+            }
+            .controls {
+                margin: 0 auto;
+                width: 500px;
+            }
+            .controls input {
+                padding: 10px;
+                margin: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                width: 350px;
+            }
+            #send {
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+            }
+            #send:hover {
+                background-color: #45a049;
+            }
+        script(src='/socket.io/socket.io.js')
+        script(src='/chat.js')
+    body
+        #content No messages yet...
+        .controls
+            label(for='name') Name: 
+            input#name(type='text', placeholder='Enter your name' required)
+            br
+            label(for='field') Message:
+            input#field(type='text', placeholder='Enter your message' required)
+            input#send(type='button', value='Send')
